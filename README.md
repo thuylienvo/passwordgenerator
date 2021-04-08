@@ -27,7 +27,7 @@ THEN the password is either displayed in an alert or written to the page
 <img width="991" alt="pwgen" src="https://user-images.githubusercontent.com/79684575/114066826-fd55db00-9850-11eb-916a-953b889afa4c.png">
 
 
-### Installation
+## Installation
 No installation required, to access this application,
 [ Click here ](https://thuylienvo.github.io/passwordgenerator/) 
 
