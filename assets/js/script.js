@@ -2,16 +2,6 @@
  const alphabetEl = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','x','y','z'];
  const specialCharEl = ['!', '@', '#', '?', '$', '*', '^'];
  var rem_pw;
- 
-// User input password Length
-var pwLengthEl =  capturePwLength(); 
-
-// User input character properties
-var pwCharEl = capturePwCharType();
-var upperC = pwCharEl[0]
-var lowerC = pwCharEl[1]
-var numbC = pwCharEl[2]
-var specialC = pwCharEl[3]
 
 // define variables for characters
 var upper = ''
@@ -58,7 +48,15 @@ function capturePwCharType() {
 function generatePassword() {
     // Grabbing password requirements                                    
     // =============================================================
+    // User input password Length
+    var pwLengthEl =  capturePwLength(); 
 
+    // User input character properties
+    var pwCharEl = capturePwCharType();
+    var upperC = pwCharEl[0]
+    var lowerC = pwCharEl[1]
+    var numbC = pwCharEl[2]
+    var specialC = pwCharEl[3]
     // Randomly generate characters
     if( upperC === true) {
         upper = alphabetEl[Math.floor(Math.random() * alphabetEl.length)].toUpperCase()
