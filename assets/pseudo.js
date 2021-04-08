@@ -8,7 +8,7 @@ Display prompt "Select length of password between 8 and 128 characters"
         - Input whole number only
             If user inputs a non whole number
                 - Display alert with error
-                - Run promp for length of password again
+                - Run prompt for length of password again
 
             If user inputs whole number value
                 - Continue 

@@ -19,24 +19,25 @@ function capturePwLength() {
 
 //Prompt for character property types 
 function capturePwCharType() { 
+    //var pwCharType = [upperCases, lowerCases, numbers, special] 
     var upperCases = confirm("Do you want uppercase letters in your password?")
     console.log(upperCases)
     var lowerCases = confirm("Do you want lowercase letters in your password??")
     console.log(lowerCases)
-    var numbers = confirm("Do you want numbers in your password??")
+    var numbers = confirm("Do you want numbers in your password?")
     console.log(numbers)
     var special = confirm("Do you want special characters in your password??")
     console.log(special)
-    if(upperCases & lowerCases & numbers & special === false) {
+    var pwCharType = [upperCases, lowerCases, numbers, special] 
+    if(upperCases == false && lowerCases == false && numbers == false && special ==false) {
         window.alert("Error: You must select at least 1 character type for your password.")
         pwCharType = capturePwCharType();
     };
-    return pwCharType
+    return pwCharType 
 }
 
-
 function generatePassword() {
-    // Grabbing password requirements
+    // Grabbing password requirements                                    
     // =============================================================
 
     // User input password Length
@@ -44,10 +45,17 @@ function generatePassword() {
 
     // User input character properties
     var pwCharEl = capturePwCharType();
+    
+    console.log("upperCases: " + pwCharEl[0])
+    console.log("lowerCases: " + pwCharEl[1])
+    console.log("numbers: " + pwCharEl[2])
+    console.log("special: " + pwCharEl[3])
+    
 
 
     // Generate password based on criteria selected
     // =============================================================
+
 
     var pw = 'xyz';
     return pw;
