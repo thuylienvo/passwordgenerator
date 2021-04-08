@@ -57,7 +57,7 @@ function generatePassword() {
     // =============================================================
 
 
-    var pw = 'xyz';
+    var pw = 'User password here';
     return pw;
 };
 
