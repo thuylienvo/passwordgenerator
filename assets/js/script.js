@@ -52,42 +52,68 @@ function generatePassword() {
     var numbC = pwCharEl[2]
     var specialC = pwCharEl[3]
 
+    // define variables for characters
+    var upper = ''
+    var lower = ''
+    var numb = ''
+    var special = ''
+
     // Randomly generate characters
     if( upperC === true) {
-        var upper = alphabetEl[Math.floor(Math.random() * alphabetEl.length)].toUpperCase()
+        upper = alphabetEl[Math.floor(Math.random() * alphabetEl.length)].toUpperCase()
         console.log("The uppercase selected is: " + upper)
     };
     if( lowerC === true) {
-        var lower = alphabetEl[Math.floor(Math.random() * alphabetEl.length)]
+        lower = alphabetEl[Math.floor(Math.random() * alphabetEl.length)]
         console.log("The lowercase selected is: " + lower)
     };
     if( numbC === true) {
-        var numb = Math.floor(Math.random() * 9)
+        numb = Math.floor(Math.random() * 9)
         console.log("The number selected is: " + numb)
     };
     if( specialC === true) {
-        var special = specialCharEl[Math.floor(Math.random() * specialCharEl.length)]
+        special = specialCharEl[Math.floor(Math.random() * specialCharEl.length)]
         console.log("The special character selected is: " + special)
     };
-    return starterPW
-}
+
     // Starter PW
     var starterPW = upper + lower + numb + special
-    console.log(starterPW) 
-    
-    console.log("upperCases: " + pwCharEl[0])
-    console.log("lowerCases: " + pwCharEl[1])
-    console.log("numbers: " + pwCharEl[2])
-    console.log("special: " + pwCharEl[3])
-    
-
 
     // Generate password based on criteria selected
     // =============================================================
+    var remaining = pwLengthEl - starterPW.length
+    console.log('remaining: ' + remaining + ', pw length: ' + pwLengthEl + ' , starter pw: ' + starterPW + ' started length: ' + starterPW.length)
 
+    var rem_pw;
+    var chars = ['upper', 'lower', 'number', 'special']
+    for (rem_pw = 0; rem_pw < remaining; rem_pw++) {
+        var true_ind = pwCharEl.indexOf(true)
+        console.log("true: " + true_ind + ", i: " + rem_pw)
+
+        if( chars[true_ind] === 'upper') {
+            upper = alphabetEl[Math.floor(Math.random() * alphabetEl.length)].toUpperCase()
+            starterPW = starterPW.concat(upper)
+        }
+        else if( chars[true_ind] === 'lower') {
+            lower = alphabetEl[Math.floor(Math.random() * alphabetEl.length)]
+            starterPW = starterPW.concat(lower)
+        }
+        else if( chars[true_ind] === 'number') {
+            numb = Math.floor(Math.random() * 9)
+            starterPW = starterPW.concat(numb)
+        }
+        else if( chars[true_ind] === 'special') {
+            special = specialCharEl[Math.floor(Math.random() * specialCharEl.length)]
+            starterPW = starterPW.concat(special)
+        };
+        console.log(starterPW)
+        
+    }
 
     var pw = 'User password here';
 
+    return starterPW
+};
 
 // Write password to the #password input
 function writePassword() {
